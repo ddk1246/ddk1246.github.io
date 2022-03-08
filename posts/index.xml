@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>所有文章 - 我的全新 Hugo 网站</title>
-        <link>ddk1246.github.io/posts/</link>
+        <link>http://example.org/posts/</link>
         <description>所有文章 | 我的全新 Hugo 网站</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 08 Mar 2022 22:12:49 &#43;0800</lastBuildDate><atom:link href="ddk1246.github.io/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>First_post</title>
-    <link>ddk1246.github.io/first_post/</link>
-    <pubDate>Tue, 08 Mar 2022 22:12:49 &#43;0800</pubDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 08 Mar 2022 23:38:54 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>语义分割评价指标</title>
+    <link>http://example.org/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</link>
+    <pubDate>Tue, 08 Mar 2022 23:38:54 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>ddk1246.github.io/first_post/</guid>
-    <description><![CDATA[hello world! ]]></description>
+    <guid>http://example.org/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</guid>
+    <description><![CDATA[语义分割评价指标 引言 语义分割是像素级别的分类，其常用评价指标： 像素准确率（Pixel Accuracy，PA）、 类别像素准确率（Class Pixel A]]></description>
 </item></channel>
 </rss>
