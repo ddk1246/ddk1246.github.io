@@ -1,9 +1,16 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>我的全新 Hugo 网站</title>
+        <title>Zk&#39;s Blogs</title>
         <link>https://ddk1246.github.io/</link>
-        <description>这是我的全新 Hugo 网站</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language>
+        <description>Zk&#39;s Blogs</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 08 Mar 2022 23:38:54 &#43;0800</lastBuildDate>
             <atom:link href="https://ddk1246.github.io/index.xml" rel="self" type="application/rss+xml" />
-        </channel>
+        <item>
+    <title>语义分割评价指标</title>
+    <link>https://ddk1246.github.io/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</link>
+    <pubDate>Tue, 08 Mar 2022 23:38:54 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ddk1246.github.io/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</guid>
+    <description><![CDATA[引言 语义分割是像素级别的分类，其常用评价指标： 像素准确率（Pixel Accuracy，PA）、 类别像素准确率（Class Pixel Accuray，C]]></description>
+</item></channel>
 </rss>
