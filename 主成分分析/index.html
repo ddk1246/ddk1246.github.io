@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>主成分分析 - Zk&#39;s Blogs</title><meta name="Description" content="Zk&#39;s Blogs"><meta property="og:title" content="主成分分析" />
+<meta property="og:description" content="协方差矩阵对角化 设一点集 $$ D= \left[\begin{matrix} x_1,y_1 \cr x_2,y_2\cr &hellip;\cr x_n,y_n \end{matrix}\right]^T $$ 协方差公式为： $$ \begin{aligned} cov(x,y)=\frac{ \sum_i^n{(x_i-\bar x)(y_i-\bar y)}}{n-1} \end{aligned} $$ 去中心化后$\bar x,\bar y$为0，（1）式可化为 $$ \begin{gathered} cov(x,y)=\frac{ \sum_i^n{x_iy_i}}{n-1} \end{gathered} $$ 协方差矩" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ddk1246.github.io/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/" /><meta property="og:image" content="https://ddk1246.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-03-09T20:21:46+08:00" />
+<meta property="article:modified_time" content="2022-03-09T20:21:46+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ddk1246.github.io/logo.png"/>
+
+<meta name="twitter:title" content="主成分分析"/>
+<meta name="twitter:description" content="协方差矩阵对角化 设一点集 $$ D= \left[\begin{matrix} x_1,y_1 \cr x_2,y_2\cr &hellip;\cr x_n,y_n \end{matrix}\right]^T $$ 协方差公式为： $$ \begin{aligned} cov(x,y)=\frac{ \sum_i^n{(x_i-\bar x)(y_i-\bar y)}}{n-1} \end{aligned} $$ 去中心化后$\bar x,\bar y$为0，（1）式可化为 $$ \begin{gathered} cov(x,y)=\frac{ \sum_i^n{x_iy_i}}{n-1} \end{gathered} $$ 协方差矩"/>
+<meta name="application-name" content="Zk&#39;s Blogs">
+<meta name="apple-mobile-web-app-title" content="Zk&#39;s Blogs"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/headlogos/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ddk1246.github.io/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/" /><link rel="prev" href="https://ddk1246.github.io/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" /><link rel="next" href="https://ddk1246.github.io/loveit%E5%B5%8C%E5%85%A5katex/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "主成分分析",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ddk1246.github.io\/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90\/"
+        },"genre": "posts","wordcount":  900 ,
+        "url": "https:\/\/ddk1246.github.io\/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90\/","datePublished": "2022-03-09T20:21:46+08:00","dateModified": "2022-03-09T20:21:46+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "王赞昆"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Zk&#39;s Blogs">Zk&#39;s Blogs</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Zk&#39;s Blogs">Zk&#39;s Blogs</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">主成分分析</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>王赞昆</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/math/"><i class="far fa-folder fa-fw"></i>Math</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-09">2022-03-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 900 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#协方差矩阵对角化">协方差矩阵对角化</a>
+          <ul>
+            <li><a href="#正交化证明1">正交化证明1</a></li>
+            <li><a href="#正交化证明2">正交化证明2</a></li>
+          </ul>
+        </li>
+        <li><a href="#pca投影">PCA投影</a></li>
+        <li><a href="#obb包围盒">OBB包围盒</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="协方差矩阵对角化">协方差矩阵对角化</h3>
+<p>设一点集
+$$
+D= \left[\begin{matrix}
+x_1,y_1 \cr
+x_2,y_2\cr
+&hellip;\cr
+x_n,y_n
+\end{matrix}\right]^T
+$$
+协方差公式为：</p>
+<p>$$
+\begin{aligned}
+cov(x,y)=\frac{ \sum_i^n{(x_i-\bar x)(y_i-\bar y)}}{n-1}
+\end{aligned}
+$$
+去中心化后$\bar x,\bar y$为0，（1）式可化为</p>
+<p>$$
+\begin{gathered}
+cov(x,y)=\frac{ \sum_i^n{x_iy_i}}{n-1}
+\end{gathered}
+$$
+协方差矩阵为</p>
+<p>$$
+C = \left(\begin{matrix}
+cov(x,x)&amp;cov(x,y)\cr
+cov(y,x)&amp;cov(y,y)
+\end{matrix}\right)
+$$</p>
+<p>$$C = \frac{1}{n-1}\cdot DD^T$$</p>
+<p>$D$为原始数据分布，$D_s$为 PCA 后其对应的分布，则存在旋转（R）、拉伸（S）矩阵，使得$D=RSD_s$,其中</p>
+<p>$$
+R=\left(\begin{matrix}
+cos(\theta)&amp;-sin(\theta) \cr
+sin(\theta)&amp;cos(\theta)
+\end{matrix}\right),
+S=\left(\begin{matrix}
+a&amp;\cr &amp;b
+\end{matrix}\right)
+$$</p>
+<p>所以</p>
+<p>$$
+\begin{aligned}
+C^`&amp;=\frac{1}{n-1} \cdot DD^{T}= \frac{1}{n-1}\cdot RSD_s \cdot (RSD_s)^T \cr
+&amp;=RS\cdot (\frac{1}{n-1}D_sD_s^T)\cdot S^TR^T \cr
+&amp;=RSCS^TR^T=RSS^TR^T \cr
+&amp;=RLR^T \cr
+\end{aligned}
+$$</p>
+<p>其中</p>
+<p>$$
+R=
+\left( \begin{matrix}
+cos(\theta) &amp; -sin(\theta) \cr
+sin(\theta) &amp; cos(\theta)
+\end{matrix} \right),
+L=
+\left(\begin{matrix}
+a^2 &amp; \cr
+&amp; b^2
+\end{matrix}\right)
+$$</p>
+<p>可见L矩阵为对角阵，R矩阵为正交矩阵$R\cdot R^T=E$,求R与L相当于对 <strong>协方差矩阵对角化</strong>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#二维点集 n*d</span>
+</span></span><span class="line"><span class="cl"><span class="n">cov</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>        <span class="c1">#d*d</span>
+</span></span><span class="line"><span class="cl"><span class="n">w</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">cov</span><span class="p">)</span>  <span class="c1">#此处对特征向量做了单位化，即列向量模长为1</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#cov = v@np.diag(w)@v.T</span>
+</span></span><span class="line"><span class="cl"><span class="n">indiex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="o">-</span><span class="n">w</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,</span><span class="n">indiex</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">w</span> <span class="o">=</span> <span class="n">w</span><span class="p">[</span><span class="n">indiex</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="正交化证明1">正交化证明1</h4>
+<p>$$
+\begin{aligned}
+MM^T &amp;= v * w * v^{-1} \cr
+MM^T &amp;= v^{-T} * w * v^T \cr
+v^{-T} * w * v^T &amp;= v * w * v^{-1} \cr
+w * v^T * v &amp;= v^T * v * w \cr
+w * N &amp;= N * w \cr
+a * N[:,0] &amp;= N[0,:] * a \cr
+\end{aligned}
+$$
+所以N只有对角元素上有值，即特征向量两两正交。<strong>但v不一定是酉矩阵</strong>，因为没做单位化。而numpy的算法做了单位化处理，具有特异性。</p>
+<h4 id="正交化证明2">正交化证明2</h4>
+<p>n维实对称矩阵S，用$\lambda ,\alpha$表示其两个不等的特征值，用$x,y$分别表示其对应的特征向量。$S=S^T,Sx=\lambda x,Sy=\alpha y(\alpha \neq \lambda)$.</p>
+<p>对$Sx=\lambda x$两边转置右端成$y$</p>
+<p>$$
+\begin{aligned}
+x^TS^T &amp;= \lambda x^T\cr
+x^TS  &amp;= \lambda x^T\cr
+x^TSy  &amp;= \lambda x^Ty
+\end{aligned}
+$$</p>
+<p>对$Sy=\alpha y$两段左乘$x^T$</p>
+<p>$$x^TSy=x^T\alpha y=\alpha x^Ty$$</p>
+<p>所以</p>
+<p>$$
+\begin{aligned}
+\alpha x^Ty &amp;=\lambda x^Ty \cr
+0 &amp;=(\alpha-\lambda)x^Ty
+\end{aligned}
+$$</p>
+<p>已知$\alpha \neq \lambda$,所以$x^Ty=0$,即不同特征值的特征向量两两正交.</p>
+<br/>
+<h3 id="pca投影">PCA投影</h3>
+<p>维度，k为特征值占比85%的索引数 	$D^T: n * d, C: d * d, v: d * d, u: d * k$（v是特征向量矩阵，u包含了特征向量对应特征值占比为前85%的列索引）</p>
+<p>投影，$u$的每一列是单位化后的<strong>方向向量</strong>$|u_{*j}|=1$，点积相当于cos投影：</p>
+<p>对D任意一行与u任意一列：
+$$
+\vec D^T_{i*} \cdot \vec u_{j}=|D^T_{i}|\cdot |u_{j}| \cdot cos(\theta)=|D^T_{i}|\cdot cos(\theta)(投影值)
+$$</p>
+<p>$D^T \cdot u:n*k$</p>
+<p>$s^2=\frac{\sum x_i^2}{n-1}=\frac{u^TDD^Tu}{n-1}=u^TCu=\lambda$</p>
+<p>证明如公式3，PCA后的方差是矩阵特征值。方差越大，数据含有的信息越多，数据信号越强</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Q</span> <span class="o">=</span> <span class="n">v</span><span class="p">[:,:</span><span class="n">k</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">data_norm</span> <span class="o">=</span> <span class="n">data</span> <span class="o">-</span> <span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># normalization</span>
+</span></span><span class="line"><span class="cl"><span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">data_norm</span><span class="p">,</span><span class="n">Q</span><span class="p">)</span> <span class="c1">#n*d @ d*k = n*k</span>
+</span></span><span class="line"><span class="cl"><span class="n">data_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">Q</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">+</span><span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># n*k @ k*d = n * d</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data_</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">data_</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br/>
+<h3 id="obb包围盒">OBB包围盒</h3>
+<p>todo</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-03-09</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://ddk1246.github.io/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/" data-title="主成分分析" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://ddk1246.github.io/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://ddk1246.github.io/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/" data-title="主成分分析"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://ddk1246.github.io/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/" data-title="主成分分析"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://ddk1246.github.io/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/" data-title="主成分分析" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://ddk1246.github.io/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/" data-title="主成分分析" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://ddk1246.github.io/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/" data-title="主成分分析"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" class="prev" rel="prev" title="语义分割评价指标"><i class="fas fa-angle-left fa-fw"></i>语义分割评价指标</a>
+            <a href="/loveit%E5%B5%8C%E5%85%A5katex/" class="next" rel="next" title="KaTeX在LoveIt中的使用">KaTeX在LoveIt中的使用<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.93.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

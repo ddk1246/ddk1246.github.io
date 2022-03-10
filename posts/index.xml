@@ -3,7 +3,21 @@
         <title>所有文章 - Zk&#39;s Blogs</title>
         <link>https://ddk1246.github.io/posts/</link>
         <description>所有文章 | Zk&#39;s Blogs</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 08 Mar 2022 23:38:54 &#43;0800</lastBuildDate><atom:link href="https://ddk1246.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 09 Mar 2022 20:21:46 &#43;0800</lastBuildDate><atom:link href="https://ddk1246.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>KaTeX在LoveIt中的使用</title>
+    <link>https://ddk1246.github.io/loveit%E5%B5%8C%E5%85%A5katex/</link>
+    <pubDate>Wed, 09 Mar 2022 20:21:46 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ddk1246.github.io/loveit%E5%B5%8C%E5%85%A5katex/</guid>
+    <description><![CDATA[aligned, array, gathered, matrix中使用 &ldquo;\cr&rdquo; https://zhuanlan.zhihu.com/p/168773798]]></description>
+</item><item>
+    <title>主成分分析</title>
+    <link>https://ddk1246.github.io/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/</link>
+    <pubDate>Wed, 09 Mar 2022 20:21:46 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ddk1246.github.io/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/</guid>
+    <description><![CDATA[协方差矩阵对角化 设一点集 $$ D= \left[\begin{matrix} x_1,y_1 \cr x_2,y_2\cr &hellip;\cr x_n,y_n \end{matrix}\right]^T $$ 协方差公式为： $$ \begin{aligned} cov(x,y)=\frac{ \sum_i^n{(x_i-\bar x)(y_i-\bar y)}}{n-1} \end{aligned} $$ 去中心化后$\bar x,\bar y$为0，（1）式可化为 $$ \begin{gathered} cov(x,y)=\frac{ \sum_i^n{x_iy_i}}{n-1} \end{gathered} $$ 协方差矩]]></description>
+</item><item>
     <title>语义分割评价指标</title>
     <link>https://ddk1246.github.io/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</link>
     <pubDate>Tue, 08 Mar 2022 23:38:54 &#43;0800</pubDate>
