@@ -172,7 +172,7 @@ $$</p>
 \begin{aligned}
 C^`&amp;=\frac{1}{n-1} \cdot DD^{T}= \frac{1}{n-1}\cdot RSD_s \cdot (RSD_s)^T \cr
 &amp;=RS\cdot (\frac{1}{n-1}D_sD_s^T)\cdot S^TR^T \cr
-&amp;=RSCS^TR^T=RSS^TR^T \cr
+&amp;=RSC_sS^TR^T=RSS^TR^T \cr
 &amp;=RLR^T \cr
 \end{aligned}
 $$</p>
@@ -226,7 +226,7 @@ $$
 所以N只有对角元素上有值，即特征向量两两正交。<strong>但v不一定是酉矩阵</strong>，因为没做单位化。而numpy的算法做了单位化处理，具有特异性。</p>
 <h4 id="正交化证明2">正交化证明2</h4>
 <p>n维实对称矩阵S，用$\lambda ,\alpha$表示其两个不等的特征值，用$x,y$分别表示其对应的特征向量。$S=S^T,Sx=\lambda x,Sy=\alpha y(\alpha \neq \lambda)$.</p>
-<p>对$Sx=\lambda x$两边转置右端成$y$</p>
+<p>对$Sx=\lambda x$两边转置右端乘$y$</p>
 <p>$$
 \begin{aligned}
 x^TS^T &amp;= \lambda x^T\cr

@@ -56,7 +56,7 @@ $$
 \begin{aligned} 
 	 C^`&=\frac{1}{n-1} \cdot DD^{T}= \frac{1}{n-1}\cdot RSD_s \cdot (RSD_s)^T \cr
 		&=RS\cdot (\frac{1}{n-1}D_sD_s^T)\cdot S^TR^T \cr
-		&=RSCS^TR^T=RSS^TR^T \cr
+		&=RSC_sS^TR^T=RSS^TR^T \cr
 		&=RLR^T \cr
 \end{aligned}
 $$
@@ -107,7 +107,7 @@ $$
 
 n维实对称矩阵S，用$\lambda ,\alpha$表示其两个不等的特征值，用$x,y$分别表示其对应的特征向量。$S=S^T,Sx=\lambda x,Sy=\alpha y(\alpha \neq \lambda)$.
 
-对$Sx=\lambda x$两边转置右端成$y$
+对$Sx=\lambda x$两边转置右端乘$y$
 
 $$
 \begin{aligned}

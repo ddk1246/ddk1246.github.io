@@ -3,7 +3,14 @@
         <title>所有文章 - Zk&#39;s Blogs</title>
         <link>https://ddk1246.github.io/posts/</link>
         <description>所有文章 | Zk&#39;s Blogs</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 09 Mar 2022 20:21:46 &#43;0800</lastBuildDate><atom:link href="https://ddk1246.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 16 Mar 2022 22:33:16 &#43;0800</lastBuildDate><atom:link href="https://ddk1246.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>柯西方程与柯西方法</title>
+    <link>https://ddk1246.github.io/%E6%9F%AF%E8%A5%BF%E6%96%B9%E7%A8%8B%E4%B8%8E%E6%9F%AF%E8%A5%BF%E6%96%B9%E6%B3%95/</link>
+    <pubDate>Wed, 16 Mar 2022 22:33:16 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ddk1246.github.io/%E6%9F%AF%E8%A5%BF%E6%96%B9%E7%A8%8B%E4%B8%8E%E6%9F%AF%E8%A5%BF%E6%96%B9%E6%B3%95/</guid>
+    <description><![CDATA[形式二：为证明$f(a+b)=f(a)*f(b)$存在唯一实数解$f(x)=a^x$ 证明 设n为正整数，则 $$ \begin{aligned} &amp;f(n+1)=f(n)*f(1) \cr f(n)&amp;=f(n-1)*f(1)\cr &amp;=f(n-2)*f(1)^2 \cr &amp;=\cdots \cr &amp;=f(1)^n \end{aligned} $$ 所以 正整数 成]]></description>
+</item><item>
     <title>KaTeX在LoveIt中的使用</title>
     <link>https://ddk1246.github.io/loveit%E5%B5%8C%E5%85%A5katex/</link>
     <pubDate>Wed, 09 Mar 2022 20:21:46 &#43;0800</pubDate>
