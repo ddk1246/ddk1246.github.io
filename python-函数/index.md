@@ -1,11 +1,15 @@
 # Python函数记录
 
 
-  {{< admonition tip"" >}}
+<!--more--> 
+
+ {{< admonition tip"" >}}
 
    本篇记录阅读项目中发现的工具包使用方法
 
   {{< /admonition >}}
+
+
 
 ## basic
 
