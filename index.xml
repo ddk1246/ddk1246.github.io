@@ -3,35 +3,46 @@
         <title>Zk&#39;s Blogs</title>
         <link>https://ddk1246.github.io/</link>
         <description>Zk&#39;s Blogs</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 16 Mar 2022 22:33:16 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 31 Mar 2022 13:31:18 &#43;0800</lastBuildDate>
             <atom:link href="https://ddk1246.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Python函数记录</title>
+    <link>https://ddk1246.github.io/python-%E5%87%BD%E6%95%B0/</link>
+    <pubDate>Thu, 31 Mar 2022 13:31:18 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ddk1246.github.io/python-%E5%87%BD%E6%95%B0/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/py.jpg" referrerpolicy="no-referrer">
+            </div>技巧 本篇记录阅读项目中发现的工具包使用方法 basic while 1 2 3 4 name = str(&#34;some&#34;) names = [Str(),Str()] while name in names: name = name+&#34;_&#34; split() 和 rsplit() 1 2 3 4 5 6 7 # split() # return [list] ,使用se]]></description>
+</item><item>
+    <title>test</title>
+    <link>https://ddk1246.github.io/%E6%B5%8B%E8%AF%95/</link>
+    <pubDate>Thu, 31 Mar 2022 13:31:18 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://ddk1246.github.io/%E6%B5%8B%E8%AF%95/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/featured-image.jpg" referrerpolicy="no-referrer">
+            </div><p>this is before</p>]]></description>
+</item><item>
     <title>柯西方程与柯西方法</title>
     <link>https://ddk1246.github.io/%E6%9F%AF%E8%A5%BF%E6%96%B9%E7%A8%8B%E4%B8%8E%E6%9F%AF%E8%A5%BF%E6%96%B9%E6%B3%95/</link>
     <pubDate>Wed, 16 Mar 2022 22:33:16 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://ddk1246.github.io/%E6%9F%AF%E8%A5%BF%E6%96%B9%E7%A8%8B%E4%B8%8E%E6%9F%AF%E8%A5%BF%E6%96%B9%E6%B3%95/</guid>
-    <description><![CDATA[形式二：为证明$f(a+b)=f(a)*f(b)$存在唯一实数解$f(x)=a^x$ 证明 设n为正整数，则 $$ \begin{aligned} &amp;f(n+1)=f(n)*f(1) \cr f(n)&amp;=f(n-1)*f(1)\cr &amp;=f(n-2)*f(1)^2 \cr &amp;=\cdots \cr &amp;=f(1)^n \end{aligned} $$ 所以 正整数 成]]></description>
-</item><item>
-    <title>KaTeX在LoveIt中的使用</title>
-    <link>https://ddk1246.github.io/loveit%E5%B5%8C%E5%85%A5katex/</link>
-    <pubDate>Wed, 09 Mar 2022 20:21:46 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://ddk1246.github.io/loveit%E5%B5%8C%E5%85%A5katex/</guid>
-    <description><![CDATA[aligned, array, gathered, matrix中使用 &ldquo;\cr&rdquo; https://zhuanlan.zhihu.com/p/168773798]]></description>
+    <description><![CDATA[<p><strong>形式二</strong>：为证明$f(a+b)=f(a)*f(b)$存在唯一实数解$f(x)=a^x$</p>]]></description>
 </item><item>
     <title>主成分分析</title>
     <link>https://ddk1246.github.io/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/</link>
     <pubDate>Wed, 09 Mar 2022 20:21:46 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://ddk1246.github.io/%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/</guid>
-    <description><![CDATA[协方差矩阵对角化 设一点集 $$ D= \left[\begin{matrix} x_1,y_1 \cr x_2,y_2\cr &hellip;\cr x_n,y_n \end{matrix}\right]^T $$ 协方差公式为： $$ \begin{aligned} cov(x,y)=\frac{ \sum_i^n{(x_i-\bar x)(y_i-\bar y)}}{n-1} \end{aligned} $$ 去中心化后$\bar x,\bar y$为0，（1）式可化为 $$ \begin{gathered} cov(x,y)=\frac{ \sum_i^n{x_iy_i}}{n-1} \end{gathered} $$ 协方差矩]]></description>
+    <description><![CDATA[协方差矩阵对角化 设一点集 $$ D= \left[\begin{matrix} x_1,y_1 \cr x_2,y_2\cr &hellip;\cr x_n,y_n \end{matrix}\right]^T $$ 协方差公式为： $$ \begin{aligned} cov(x,y)=\frac{ \sum_i^n{(x_i-\bar x)(y_i-\bar y)}}{n-1} \end{aligned} $$ 去中心化后$\bar x,\bar y$为0，（1）式可化为]]></description>
 </item><item>
     <title>语义分割评价指标</title>
     <link>https://ddk1246.github.io/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</link>
     <pubDate>Tue, 08 Mar 2022 23:38:54 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://ddk1246.github.io/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</guid>
-    <description><![CDATA[引言 语义分割是像素级别的分类，其常用评价指标： 像素准确率（Pixel Accuracy，PA）、 类别像素准确率（Class Pixel Accuray，C]]></description>
+    <description><![CDATA[引言 语义分割是像素级别的分类，其常用评价指标： 像素准确率（Pixel Accuracy，PA）、 类别像素准确率（Class]]></description>
 </item></channel>
 </rss>

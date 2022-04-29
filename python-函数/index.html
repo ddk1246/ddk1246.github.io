@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Python函数记录 - Zk&#39;s Blogs</title><meta name="Description" content="Zk&#39;s Blogs"><meta property="og:title" content="Python函数记录" />
+<meta property="og:description" content="技巧 本篇记录阅读项目中发现的工具包使用方法 basic while 1 2 3 4 name = str(&#34;some&#34;) names = [Str(),Str()] while name in names: name = name&#43;&#34;_&#34; split() 和 rsplit() 1 2 3 4 5 6 7 # split() # return [list] ,使用se" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ddk1246.github.io/python-%E5%87%BD%E6%95%B0/" /><meta property="og:image" content="https://ddk1246.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-03-31T13:31:18+08:00" />
+<meta property="article:modified_time" content="2022-03-31T13:31:18+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ddk1246.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Python函数记录"/>
+<meta name="twitter:description" content="技巧 本篇记录阅读项目中发现的工具包使用方法 basic while 1 2 3 4 name = str(&#34;some&#34;) names = [Str(),Str()] while name in names: name = name&#43;&#34;_&#34; split() 和 rsplit() 1 2 3 4 5 6 7 # split() # return [list] ,使用se"/>
+<meta name="application-name" content="Zk&#39;s Blogs">
+<meta name="apple-mobile-web-app-title" content="Zk&#39;s Blogs"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/ikiko.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://ddk1246.github.io/python-%E5%87%BD%E6%95%B0/" /><link rel="prev" href="https://ddk1246.github.io/%E6%B5%8B%E8%AF%95/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Python函数记录",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ddk1246.github.io\/python-%E5%87%BD%E6%95%B0\/"
+        },"genre": "posts","wordcount":  2628 ,
+        "url": "https:\/\/ddk1246.github.io\/python-%E5%87%BD%E6%95%B0\/","datePublished": "2022-03-31T13:31:18+08:00","dateModified": "2022-03-31T13:31:18+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "王赞昆"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Zk&#39;s Blogs">Zk&#39;s Blogs</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Zk&#39;s Blogs">Zk&#39;s Blogs</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python函数记录</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>王赞昆</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-31">2022-03-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2628 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/py.jpg"
+        data-srcset="/images/py.jpg, /images/py.jpg 1.5x, /images/py.jpg 2x"
+        data-sizes="auto"
+        alt="/images/py.jpg"
+        title="/images/py.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic">basic</a></li>
+    <li><a href="#os">os</a></li>
+    <li><a href="#pathlib">pathlib</a></li>
+    <li><a href="#glob">glob</a></li>
+    <li><a href="#numpy">numpy</a></li>
+    <li><a href="#collections">collections</a></li>
+    <li><a href="#cv2">cv2</a></li>
+    <li><a href="#logging">logging</a></li>
+    <li><a href="#multiprocessing">multiprocessing</a></li>
+    <li><a href="#pandas">pandas</a></li>
+    <li><a href="#einops">einops</a></li>
+    <li><a href="#albumentations-图像数据增强">Albumentations (图像数据增强)</a></li>
+    <li><a href="#natsort">natsort</a></li>
+    <li><a href="#tensorboard">tensorboard</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>技巧<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">本篇记录阅读项目中发现的工具包使用方法</div>
+        </div>
+    </div>
+<h2 id="basic">basic</h2>
+<ul>
+<li>
+<p>while</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&#34;some&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">Str</span><span class="p">(),</span><span class="n">Str</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">+</span><span class="s2">&#34;_&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>split() 和 rsplit()</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># split() </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># return [list] ,使用seq作为分割字符串（默认&#39; &#39; and &#39;\n&#39;），maxsplit为最大分割次数</span>
+</span></span><span class="line"><span class="cl"><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># rsplit() </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 与split相似，分割从右侧开始</span>
+</span></span><span class="line"><span class="cl"><span class="nb">str</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<br/>
+<h2 id="os">os</h2>
+<ul>
+<li>
+<p>使用 <code>os.path.dirname</code> 替代切换至上级目录<code>../</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">dirname</span>
+</span></span><span class="line"><span class="cl"><span class="n">BASE_DIR</span> <span class="o">=</span> <span class="n">dirname</span><span class="p">(</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">ROOT_DIR</span> <span class="o">=</span> <span class="n">dirname</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ROOT_DIR</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>os.path.join(*List(PATH))</code> 路径拼接</p>
+<p>win32与linux使用不同的分隔符，可使用 <code>.replace()</code> 替换后再使用 <code>.split()</code> 分割</p>
+<p><strong>注意：多个路径组合后返回，第一个绝对路径之前的参数将被忽略</strong></p>
+</li>
+<li>
+<p><code>os.path.basename</code> 返回文件名</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;c:\test.csv&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;test.csv&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="s1">&#39;c:\csv&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;csv&#39;</span> <span class="err">（</span><span class="n">这里csv被当作文件名处理了</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="s1">&#39;c:\csv</span><span class="se">\&#39;</span><span class="s1">)</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>用户路径名</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">dst</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="pathlib">pathlib</h2>
+<ul>
+<li>
+<p>pathlib.Path(path)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+</span></span><span class="line"><span class="cl"><span class="n">source_path</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">source_paht</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">file</span><span class="o">.</span><span class="n">parent</span>
+</span></span><span class="line"><span class="cl"><span class="n">file</span><span class="o">.</span><span class="n">touch</span><span class="p">()</span> <span class="c1"># 创建</span>
+</span></span><span class="line"><span class="cl"><span class="n">file</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span> <span class="c1"># 删除</span>
+</span></span><span class="line"><span class="cl"><span class="n">file</span><span class="o">.</span><span class="n">relative_to</span><span class="p">(</span><span class="n">dir_1</span><span class="p">)</span> <span class="c1"># file 相对于dir_1的位置</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#or</span>
+</span></span><span class="line"><span class="cl"><span class="n">files</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&#34;*.txt&#34;</span><span class="p">)</span> <span class="c1"># 分级查找：*第一级 */* 第二级</span>
+</span></span><span class="line"><span class="cl"><span class="n">files</span> <span class="o">=</span> <span class="n">Paht</span><span class="p">(</span><span class="n">flie</span><span class="p">)</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&#34;*.mp4&#34;</span><span class="p">)</span> <span class="c1"># 递归查找</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 路径解码 -&gt; windows路径分隔符更改，更换为绝对路径</span>
+</span></span><span class="line"><span class="cl"><span class="n">file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">()</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 将~替换为用户家目录 ,~user替换为user的家目录</span>
+</span></span><span class="line"><span class="cl"><span class="n">Path</span><span class="p">()</span><span class="o">.</span><span class="n">expanduser</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="glob">glob</h2>
+<ul>
+<li>
+<p><code>glob.glob()</code> 返回所有匹配的文件路径列表</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">img_path</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">images</span><span class="p">,</span><span class="s2">&#34;*.jpg&#34;</span><span class="p">)))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">”*”匹配0个或多个字符；
+</span></span><span class="line"><span class="cl">”?”匹配单个字符；
+</span></span><span class="line"><span class="cl">”[]”匹配指定范围内的字符，如：[0-9]匹配数字。  
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<br/>
+<h2 id="numpy">numpy</h2>
+<ul>
+<li>
+<p>数组拼接 <code>np.concatenate(arrays, axis=i)</code> e.g. <code>i</code>记为可滑动第i维索引</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">subarr</span> <span class="ow">in</span> <span class="n">iterator</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subarr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">outarr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>随机选取</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">choices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="c1"># A必须为一维数组 1—D</span>
+</span></span><span class="line"><span class="cl"><span class="n">choices</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">i</span><span class="p">),:]</span> <span class="c1"># A为高维数组</span>
+</span></span><span class="line"><span class="cl"><span class="n">choices</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c1"># A维度不作要求</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>维度增加</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span> <span class="o">==</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl"><span class="n">img</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="c1"># -&gt; 1,w,h</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="collections">collections</h2>
+<ul>
+<li>
+<p>双向队列</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div align=center>
+<img src="/images/093fe6f890144c20c9434b2aebdb2550.png"/>
+</div>
+</li>
+<li>
+<p>有序集合</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="cv2">cv2</h2>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">​	opencv中的颜色读取默认为BGR通道</div>
+        </div>
+    </div>
+<ul>
+<li>
+<p>视频文件切换至指定帧</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 视频流信息（文件）读取</span>
+</span></span><span class="line"><span class="cl"><span class="n">capture</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">videoPath</span><span class="p">,</span> <span class="n">video</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 读取FPS</span>
+</span></span><span class="line"><span class="cl"><span class="n">fps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">capture</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_FPS</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置将读取的帧数｛count｝，而后读取即可</span>
+</span></span><span class="line"><span class="cl"><span class="n">capture</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_POS_FRAMES</span><span class="p">,</span><span class="n">count</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ret</span><span class="p">,</span> <span class="n">img</span> <span class="o">=</span> <span class="n">capture</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>仿射变换与透视变换</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 获得仿射变换矩阵M，由对应点获得(都需转换为np.float32)</span>
+</span></span><span class="line"><span class="cl"><span class="n">src_point</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([],</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">src_point</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">([[],])</span>
+</span></span><span class="line"><span class="cl"><span class="n">src_point</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">asdtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">dst_point</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">([[],])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 仿射变换满足平直性和平行性</span>
+</span></span><span class="line"><span class="cl"><span class="n">M</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getAffineTransform</span><span class="p">(</span><span class="n">src_point</span><span class="p">,</span><span class="n">dst_point</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">M</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getPerspectiveTransform</span><span class="p">(</span><span class="n">src_point</span><span class="p">,</span><span class="n">dst_point</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 图像变换使用warp*,对索引做映射</span>
+</span></span><span class="line"><span class="cl"><span class="n">outImg</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">warpAffine</span><span class="p">(</span><span class="n">inImg</span><span class="p">,</span><span class="n">M</span><span class="p">,(</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">))</span> <span class="c1">#仿射变换</span>
+</span></span><span class="line"><span class="cl"><span class="n">outImg</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">warpPerspective</span><span class="p">(</span><span class="n">inImg</span><span class="p">,</span><span class="n">M</span><span class="p">,(</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">))</span> <span class="c1">#透视变换</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 点集的变换使用perspectiveTransform映射,对值做映射</span>
+</span></span><span class="line"><span class="cl"><span class="n">points</span> <span class="o">=</span> <span class="n">points</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">out_point</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">perspectiveTransform</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>仿射变换估计</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(),</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1"># fullAffine 六自由度仿射变换,至少需要3个点,多余的点使用最小二乘法拟合</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1"># 尺度、旋转、位移、斜切</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1"># [[a b c]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">#  [d e f]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">m</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">estimateAffine2D</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># partialAffine 四自由度仿射变换,至少需要2个点</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 尺度、旋转、位移</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># [[cos*s -sin*s tx]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#  [sin*s  cos*s ty]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">m</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">estimateAffinePartial2D</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>URL:<a href="https://" rel="">https://blog.csdn.net/dongfang1984/article/details/52959308</a></p>
+</li>
+<li>
+<p>特征点匹配与映射</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">sift_detect</span><span class="p">(</span><span class="n">srcImg</span><span class="p">,</span> <span class="n">dstImg</span><span class="p">,</span> <span class="n">detector</span><span class="o">=</span><span class="s1">&#39;sift&#39;</span><span class="p">,</span> <span class="n">matcher</span> <span class="o">=</span><span class="s1">&#39;FLANN&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 查找关键点</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">detector</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;si&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;sift detector......&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">detector</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">SIFT_create</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;ORB detector......&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">detector</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ORB_create</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">kp1</span><span class="p">,</span> <span class="n">des1</span> <span class="o">=</span> <span class="n">detector</span><span class="o">.</span><span class="n">detectAndCompute</span><span class="p">(</span><span class="n">srcImg</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">kp2</span><span class="p">,</span> <span class="n">des2</span> <span class="o">=</span> <span class="n">detector</span><span class="o">.</span><span class="n">detectAndCompute</span><span class="p">(</span><span class="n">dstImg</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># kp1 返回类型为[cv2.KeyPoint,···]</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># KeyPoint.pt 关键点位置坐标</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># KeyPoint.size 关键点邻域直径</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># KeyPoint.angle 特征点的方向，值为[零, 三百六十)，负值表示不使用</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># KeyPoint.response KeyPoint.octave特征点所在的图像金字塔的组 KeyPoint.class_id 用于聚类的id</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 关键点匹配</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">matcher</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;BFM&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">bf</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">BFMatcher</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">matches</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">knnMatch</span><span class="p">(</span><span class="n">des1</span><span class="p">,</span> <span class="n">des2</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#k=2为查找前两个相似点</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">FLANN_INDEX_KDTREE</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="n">indexParams</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">algorithm</span><span class="o">=</span><span class="n">FLANN_INDEX_KDTREE</span><span class="p">,</span> <span class="n">tree</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">searchParams</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">checks</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># 指定索引树被遍历多少次，次数越多，计算时间越长，越精确</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">flann</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">FlannBasedMatcher</span><span class="p">(</span><span class="n">indexParams</span><span class="p">,</span> <span class="n">searchParams</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">matches</span> <span class="o">=</span> <span class="n">flann</span><span class="o">.</span><span class="n">knnMatch</span><span class="p">(</span><span class="n">des1</span><span class="p">,</span> <span class="n">des2</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#k=2为查找前两个相似点</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># matches 返回类型为[cv2.DMatch,···]</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># • DMatch.distance - 描述符之间的距离。越小越好。</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># • DMatch.trainIdx - 目标图像中描述符的索引。</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># • DMatch.queryIdx - 查询图像中描述符的索引。</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># • DMatch.imgIdx - 目标图像的索引。 </span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 若最相似点的相似距离 小于 次相似点相似距离的0.5倍，则认为相似</span>
+</span></span><span class="line"><span class="cl">    <span class="n">good</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">matches</span> <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">distance</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">n</span><span class="o">.</span><span class="n">distance</span><span class="p">]</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">min_match_count</span> <span class="o">=</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">good</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">min_match_count</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 匹配点</span>
+</span></span><span class="line"><span class="cl">        <span class="n">src_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">([</span><span class="n">kp1</span><span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">queryIdx</span><span class="p">]</span><span class="o">.</span><span class="n">pt</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">good</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dst_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">([</span><span class="n">kp2</span><span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">trainIdx</span><span class="p">]</span><span class="o">.</span><span class="n">pt</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">good</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 找到变换矩阵m</span>
+</span></span><span class="line"><span class="cl">        <span class="n">m</span><span class="p">,</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findHomography</span><span class="p">(</span><span class="n">src_pts</span><span class="p">,</span> <span class="n">dst_pts</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">RANSAC</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">#return 3*3</span>
+</span></span><span class="line"><span class="cl">        <span class="n">matchmask</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>图像变换</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 注意交换坐标位置</span>
+</span></span><span class="line"><span class="cl"><span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">image_mask</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">image</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">cv</span><span class="o">.</span><span class="n">INTER_LINEAR</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>圆形绘制</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 被绘制图像img | 点坐标w,h |半径:radius | 填充像素 | 线宽 -1为内部填充</span>
+</span></span><span class="line"><span class="cl"><span class="n">cv</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">radius</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="logging">logging</h2>
+<ul>
+<li>
+<p>日志文件配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">blog</span><span class="o">.</span><span class="n">csdn</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">pansaky</span><span class="o">/</span><span class="n">article</span><span class="o">/</span><span class="n">details</span><span class="o">/</span><span class="mi">90710751</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="multiprocessing">multiprocessing</h2>
+<ul>
+<li>
+<p>设置守护进程</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">[</span><span class="nb">setattr</span><span class="p">(</span><span class="n">process</span><span class="p">,</span> <span class="s2">&#34;daemon&#34;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">process</span> <span class="ow">in</span> <span class="n">processes</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="pandas">pandas</h2>
+<p><strong>筛选</strong></p>
+<ul>
+<li>
+<p>筛选指定行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>筛选出数据某列为某值的所有数据记录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;列名1&#39;</span><span class="p">]</span><span class="o">==</span> <span class="err">‘</span><span class="n">列值1</span><span class="err">’</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 多条件匹配时，使用 &amp;|等符号连接各个条件</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 注意：使用()包围各个条件</span>
+</span></span><span class="line"><span class="cl"><span class="n">data_many</span><span class="o">=</span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;列名1&#39;</span><span class="p">]</span><span class="o">==</span> <span class="err">‘</span><span class="n">列值1</span><span class="err">’</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;列名2&#39;</span><span class="p">]</span><span class="o">==</span><span class="err">‘</span><span class="n">列值2</span><span class="err">’</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 多值匹配时 条件取反可使用==False 和 ~</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="o">~</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;label&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;falling|squat&#39;</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">str</span><span class="o">.</span><span class="n">startswith</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="o">~</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;NodeId&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span> <span class="p">([</span><span class="s2">&#34;fe50c54a-5091-4fb2-8487-efeffd10592d&#34;</span><span class="p">,</span><span class="s2">&#34;fcc671c2-c92c-4285-934f-dda38a2ed475&#34;</span><span class="p">])]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>模式匹配</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 开头包含某值的模式匹配</span>
+</span></span><span class="line"><span class="cl"><span class="n">cond</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;列名&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;值&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 中间包含某值的模式匹配,可添加正则表达式</span>
+</span></span><span class="line"><span class="cl"><span class="n">cond</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;列名&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;apple|banana&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>数字值筛选</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">flags</span><span class="p">[(</span><span class="n">flags</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">flags</span><span class="p">[</span><span class="s1">&#39;bars&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">)]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>参考：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[https://blog.csdn.net/weixin_42322206/article/details/123607271](https://)
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p><strong>表格编辑</strong></p>
+<ul>
+<li>
+<p>列表头替换</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">dt</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span> <span class="c1"># 缺点为必须与源表头数目对应</span>
+</span></span><span class="line"><span class="cl"><span class="n">dt</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">:</span><span class="s1">&#39;c&#39;</span><span class="p">},</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="c1">#源表头与目标表头映射</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="einops">einops</h2>
+<p>与enisum函数相似，但enisum从索引的角度出发计算 <strong>一个或两个矩阵</strong> 的计算法则，但einops更应该应用在 <strong>单个矩阵</strong> 的变换。</p>
+<ul>
+<li>
+<p>rearrange() 维数变换</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">images</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">imgs</span><span class="p">,</span> <span class="s2">&#34;(b1 b2) h w c -&gt; (b1 h) (b2 w) c&#34;</span><span class="p">,</span><span class="n">b1</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>reduce() 维数减少可用于min、max、mean</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">reduce</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&#34;(h h_s) (w w_s) c -&gt; h w c&#34;</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="s2">&#34;max&#34;</span><span class="p">,</span> <span class="n">h_s</span><span class="o">=</span><span class="n">step</span><span class="p">,</span> <span class="n">w_s</span><span class="o">=</span><span class="n">step</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># &#39;b h w c -&gt; b () () c&#39; 等价于 &#39;b h w c -&gt; b 1 1 c&#39;  </span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>repeat() 使用重复的方法增加维数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">repeat</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&#34;h w c -&gt; (h h_s) (w w_s) c&#34;</span><span class="p">,</span> <span class="n">h_s</span><span class="o">=</span><span class="n">step</span><span class="p">,</span> <span class="n">w_s</span><span class="o">=</span><span class="n">step</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>parse_shape() 解析张量形状，将轴名称映射到其长度。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">parse_shape</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;batch _ h w&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="s1">&#39;batch&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="mi">700</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">rearrange</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;(b c h w) -&gt; b c h w&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">parse_shape</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;b _ h w&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">shape</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a href="https://zhuanlan.zhihu.com/p/372692913" target="_blank" rel="noopener noreffer">https://zhuanlan.zhihu.com/p/372692913</a></p>
+<p><a href="https://github.com/arogozhnikov/einops/blob/master/docs/1-einops-basics.ipynb" target="_blank" rel="noopener noreffer">https://github.com/arogozhnikov/einops/blob/master/docs/1-einops-basics.ipynb</a></p>
+</li>
+</ul>
+<h2 id="albumentations-图像数据增强">Albumentations (图像数据增强)</h2>
+<ul>
+<li>
+<p>加载</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">albumentations</span> <span class="k">as</span> <span class="nn">A</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cv2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&#34;/path/to/image.jpg&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">)</span> <span class="c1"># cv2默认读取BGR格式，Albumentations使用RGB格式</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>管道组合 Compose ,单图像增强</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">transform</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">  <span class="n">A</span><span class="o">.</span><span class="n">RandomCrop</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">256</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="n">A</span><span class="o">.</span><span class="n">HorizontalFlip</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="n">A</span><span class="o">.</span><span class="n">RandomBrightnessContrast</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.2</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">transformed</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="p">)</span> <span class="c1">#內键为&#34;image&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">transformed_image</span> <span class="o">=</span> <span class="n">transformed</span><span class="p">[</span><span class="s2">&#34;image&#34;</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>图像 蒙版增强</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mask</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&#34;/path/to/mask.png&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">transformed</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span> <span class="c1">#內键为&#34;image&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">transformed_image</span> <span class="o">=</span> <span class="n">transformed</span><span class="p">[</span><span class="s2">&#34;image&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">transformed_mask</span> <span class="o">=</span> <span class="n">transformed</span><span class="p">[</span><span class="s1">&#39;mask&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># masks = [mask1,mask2,···] 多蒙版模式</span>
+</span></span><span class="line"><span class="cl"><span class="n">transformed</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">masks</span><span class="o">=</span><span class="n">masks</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>图像 包围框增强</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">transform</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">    <span class="n">A</span><span class="o">.</span><span class="n">RandomCrop</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">450</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">450</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">A</span><span class="o">.</span><span class="n">HorizontalFlip</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">A</span><span class="o">.</span><span class="n">RandomBrightnessContrast</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.2</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">],</span> <span class="n">bbox_params</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">BboxParams</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;coco&#39;</span><span class="p">,</span> <span class="n">min_area</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">min_visibility</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">label_fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;class_labels&#39;</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># class_labels与定义时label_fields对应</span>
+</span></span><span class="line"><span class="cl"><span class="n">transformed</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">bboxes</span><span class="o">=</span><span class="n">bboxes</span><span class="p">,</span> <span class="n">class_labels</span><span class="o">=</span><span class="n">class_labels</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">transformed_image</span> <span class="o">=</span> <span class="n">transformed</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">transformed_bboxes</span> <span class="o">=</span> <span class="n">transformed</span><span class="p">[</span><span class="s1">&#39;bboxes&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">transformed_class_labels</span> <span class="o">=</span> <span class="n">transformed</span><span class="p">[</span><span class="s1">&#39;class_labels&#39;</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div align=center>
+<img src="/images/86a306d2b2155ed71c10b961557135ab.png"/>
+</div>
+</li>
+<li>
+<p>图像 关键点 增强</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">transform</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">    <span class="n">A</span><span class="o">.</span><span class="n">RandomCrop</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">330</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">330</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">A</span><span class="o">.</span><span class="n">RandomBrightnessContrast</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.2</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">],</span> <span class="n">keypoint_params</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">KeypointParams</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span> <span class="n">label_fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;class_labels&#39;</span><span class="p">],</span> <span class="n">remove_invisible</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">angle_in_degrees</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">transformed</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">keypoints</span><span class="o">=</span><span class="n">keypoints</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">transformed_image</span> <span class="o">=</span> <span class="n">transformed</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">transformed_keypoints</span> <span class="o">=</span> <span class="n">transformed</span><span class="p">[</span><span class="s1">&#39;keypoints&#39;</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>图像 包围框 关键点 增强</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pass
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a href="https://blog.csdn.net/weixin_36670529/article/details/116626394" target="_blank" rel="noopener noreffer">https://blog.csdn.net/weixin_36670529/article/details/116626394</a></p>
+</li>
+</ul>
+<h2 id="natsort">natsort</h2>
+<ul>
+<li>
+<p>自然排序 natsorted（本质套皮sorted，整合key）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">natsort</span> <span class="kn">import</span> <span class="n">natsorted</span><span class="p">,</span><span class="n">ns</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># ns 为自然排序方法标志 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># eg: ns.REAL = ns.FLOAT | ns.SIGNED 解析参数为有符号浮点数</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># eg：ns.PATH</span>
+</span></span><span class="line"><span class="cl"><span class="n">ret</span> <span class="o">=</span> <span class="n">natsorted</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">alg</span><span class="o">=</span><span class="n">ns</span><span class="o">.</span><span class="n">REAL</span> <span class="o">|</span> <span class="n">ns</span><span class="o">.</span><span class="n">LOCALE</span> <span class="o">|</span> <span class="n">ns</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="tensorboard">tensorboard</h2>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/484289017" target="_blank" rel="noopener noreffer">https://zhuanlan.zhihu.com/p/484289017</a></li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-03-31</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/python-%E5%87%BD%E6%95%B0/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://ddk1246.github.io/python-%E5%87%BD%E6%95%B0/" data-title="Python函数记录" data-via="wangzankun1"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://ddk1246.github.io/python-%E5%87%BD%E6%95%B0/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://ddk1246.github.io/python-%E5%87%BD%E6%95%B0/" data-title="Python函数记录"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://ddk1246.github.io/python-%E5%87%BD%E6%95%B0/" data-title="Python函数记录" data-image="/images/py.jpg"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://ddk1246.github.io/python-%E5%87%BD%E6%95%B0/" data-title="Python函数记录" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://ddk1246.github.io/python-%E5%87%BD%E6%95%B0/" data-title="Python函数记录" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://ddk1246.github.io/python-%E5%87%BD%E6%95%B0/" data-title="Python函数记录"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E6%B5%8B%E8%AF%95/" class="prev" rel="prev" title="test"><i class="fas fa-angle-left fa-fw"></i>test</a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.93.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
