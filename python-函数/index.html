@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/ddk1246.github.io\/python-%E5%87%BD%E6%95%B0\/"
-        },"genre": "posts","wordcount":  2628 ,
+        },"genre": "posts","wordcount":  2764 ,
         "url": "https:\/\/ddk1246.github.io\/python-%E5%87%BD%E6%95%B0\/","datePublished": "2022-03-31T13:31:18+08:00","dateModified": "2022-03-31T13:31:18+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -104,7 +104,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python函数记录</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>王赞昆</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-31">2022-03-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2628 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-31">2022-03-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2764 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -134,6 +134,10 @@
     <li><a href="#albumentations-图像数据增强">Albumentations (图像数据增强)</a></li>
     <li><a href="#natsort">natsort</a></li>
     <li><a href="#tensorboard">tensorboard</a></li>
+    <li><a href="#ffmpeg--ffmpy3">ffmpeg  ffmpy3</a></li>
+    <li><a href="#pytorch-gam">pytorch-GAM</a></li>
+    <li><a href="#kornia">Kornia</a></li>
+    <li><a href="#matplotlib">matplotlib</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><div class="details admonition tip open">
@@ -1011,6 +1015,99 @@
 <h2 id="tensorboard">tensorboard</h2>
 <ul>
 <li><a href="https://zhuanlan.zhihu.com/p/484289017" target="_blank" rel="noopener noreffer">https://zhuanlan.zhihu.com/p/484289017</a></li>
+</ul>
+<h2 id="ffmpeg--ffmpy3">ffmpeg  ffmpy3</h2>
+<ul>
+<li>
+<p>安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pip install ffmpy3
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">ffmpy3</span> <span class="kn">import</span> <span class="n">FFmpeg</span>
+</span></span><span class="line"><span class="cl"><span class="n">ff</span> <span class="o">=</span> <span class="n">FFmpeg</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">input_filename</span><span class="p">):</span> <span class="p">[</span><span class="s1">&#39;-ss&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{float}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;-to&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{float}</span><span class="s1">&#39;</span><span class="p">]},</span>
+</span></span><span class="line"><span class="cl">            <span class="n">outputs</span><span class="o">=</span><span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">output_filename</span><span class="p">):</span> <span class="p">[</span><span class="s1">&#39;-c:v&#39;</span><span class="p">,</span> <span class="s1">&#39;libx264&#39;</span><span class="p">,</span> <span class="s1">&#39;-loglevel&#39;</span><span class="p">,</span> <span class="s1">&#39;panic&#39;</span><span class="p">]})</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">ff</span><span class="o">.</span><span class="n">cmd</span><span class="p">)</span> <span class="c1"># 打印ffmpeg命令</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ff</span><span class="o">.</span><span class="n">run</span><span class="p">()</span> <span class="c1"># 同步运行</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ff</span><span class="o">.</span><span class="n">run_async</span><span class="p">()</span> <span class="c1"># 异步运行</span>
+</span></span><span class="line"><span class="cl"><span class="k">await</span> <span class="n">ff</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<br/>
+<h2 id="pytorch-gam">pytorch-GAM</h2>
+<br/>
+<h2 id="kornia">Kornia</h2>
+<br/>
+<h2 id="matplotlib">matplotlib</h2>
+<ul>
+<li>查看可用字体
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">matplotlib.font_manager</span> <span class="kn">import</span> <span class="n">FontProperties</span><span class="p">,</span><span class="n">fontManager</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mpl_fonts</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">FontManager</span><span class="p">()</span><span class="o">.</span><span class="n">ttflist</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;all font list get from matplotlib.font_manager:&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">mpl_fonts</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">f</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>设置字体
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib</span>
+</span></span><span class="line"><span class="cl"><span class="n">matplotlib</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s2">&#34;font&#34;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s1">&#39;Microsoft YaHei&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#本地临时加载</span>
+</span></span><span class="line"><span class="cl"><span class="n">fontManager</span><span class="o">.</span><span class="n">addfont</span><span class="p">(</span><span class="s1">&#39;myscript/simhei.ttf&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># my_font = FontProperties(fname=r&#34;./simhei.ttf&#34;, size=12)</span>
+</span></span><span class="line"><span class="cl"><span class="n">matplotlib</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s2">&#34;font&#34;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s1">&#39;simhei&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

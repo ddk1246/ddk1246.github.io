@@ -496,3 +496,56 @@
 
 - https://zhuanlan.zhihu.com/p/484289017
 
+## ffmpeg  ffmpy3
+
+- 安装
+  ```
+  pip install ffmpy3
+  ```
+
+- 使用
+  ```python
+  from ffmpy3 import FFmpeg
+  ff = FFmpeg(inputs={str(input_filename): ['-ss', '{float}', '-to', '{float}']},
+              outputs={str(output_filename): ['-c:v', 'libx264', '-loglevel', 'panic']})
+  print(ff.cmd) # 打印ffmpeg命令
+  
+  ff.run() # 同步运行
+  
+  ff.run_async() # 异步运行
+  await ff.wait()
+  ```
+
+<br/>
+
+## pytorch-GAM
+
+<br/>
+
+## Kornia 
+
+<br/>
+
+## matplotlib
+
+- 查看可用字体
+  ```python
+  from matplotlib.font_manager import FontProperties,fontManager
+  
+  mpl_fonts = set(f.name for f in FontManager().ttflist)
+  print('all font list get from matplotlib.font_manager:')
+  for f in sorted(mpl_fonts):
+      print('\t' + f)
+  ```
+- 设置字体
+  ```python
+  import matplotlib.pyplot as plt
+  import matplotlib
+  matplotlib.rc("font", family='Microsoft YaHei')
+  
+  #本地临时加载
+  fontManager.addfont('myscript/simhei.ttf')
+  # my_font = FontProperties(fname=r"./simhei.ttf", size=12)
+  matplotlib.rc("font", family='simhei')
+  ```
+
